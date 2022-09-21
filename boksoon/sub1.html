@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복순도가 소개</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+         $(document).ready(function(){
+            mobile_menu();
+        });
+        
+        function mobile_menu(){
+            /* 변수 선언 */
+            var $menu = null;
+            var $left_gnb = null; // 영역 전체
+            var $depth1_wrap = null;
+            var $depth1 = null;
+            var $depth1_btn = null;
+            
+            /* 시작 함수 */
+            function start(){
+                init();
+                init_event();
+            }
+            /* 변수 초기화 함수 */
+            function init(){
+                $menu = $('.mobile_menu');
+                $left_gnb = $('.left_gnbWrap'); // 영역 전체
+                $depth1_wrap = $('.left_gnb>li');
+
+                $on_none1 = $('.left_gnb>li:nth-child(1)');
+                $on_none2 = $('.left_gnb>li:nth-child(2)');
+                $on_none3 = $('.left_gnb>li:nth-child(3)');
+                $on_none5 = $('.left_gnb>li:nth-child(5)');
+
+                $depth1 = $depth1_wrap.children('ul');
+                $depth1_btn = $depth1_wrap.children('a');
+            }
+            /* 이벤트 함수 */
+            function init_event(){
+                
+                /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+                $menu.click(function(event){
+                    event.preventDefault();
+                    $left_gnb.addClass('on');
+                });
+                
+                /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+                $('.close').click(function(event){
+                    event.preventDefault();
+
+                    $left_gnb.removeClass('on');
+                        
+                });
+
+                 /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        // (메뉴1)하위메뉴 없는 1차메뉴 링크
+        $on_none1.click(function () {
+
+        location.replace('sub1.html');
+
+        });
+        // (메뉴2)하위메뉴 없는 1차메뉴 링크
+        $on_none2.click(function () {
+
+        location.replace('sub2.html');
+
+        });
+        // (메뉴3)하위메뉴 없는 1차메뉴 링크
+        $on_none3.click(function () {
+
+        location.replace('sub3.html');
+
+        });
+        // (메뉴5)하위메뉴 없는 1차메뉴 링크
+        $on_none5.click(function () {
+
+        location.replace('sub1.html');
+
+        });
+            }
+            
+            start(); // 시작 호출
+        }
+        
+        </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                <ul class="menu">
+                    <li><a href="sub1.html">복순도가</a></li>
+                    <li><a href="sub2.html">오프라인</a></li>
+                    <li><a href="sub3.html">체험하기</a></li>
+                    <li><a href="sub4.html">구매하기</a>
+                        <ul class="submenu">
+                            <li><a href="sub4.html">전통주</a></li>
+                            <li><a href="#">선물세트</a></li>
+                            <li><a href="#">유산균</a></li>
+                            <li><a href="#">코스매틱</a></li>
+                            <li><a href="#">굿즈</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="images/notice_가격인상공지.jpg" target="_blank">공지안내</a></li>
+                    <!-- 초기화 -->
+                </ul>
+                
+                <!-- 초기화 -->
+                <div class="mobile_menu">
+                    <a href="#"><img src="images/menu.png" alt="mobilemenu"></a>
+                </div>
+                <nav class="left_gnbWrap">
+                    <a href="#" class="close"><img src="images/close.png"></a>
+                    <ul class="left_gnb">
+                        <li>
+                            <a href="sub1.html">복순도가</a>
+                        </li>
+                        <li>
+                            <a href="sub2.html">오프라인</a>
+                        </li>
+                        <li>
+                            <a href="sub3.html">체험하기</a>
+                        </li>
+                        <li>
+                            <a href="sub4.html">구매하기</a>
+                            <ul>
+                                <li><a href="sub4.html">전통주</a></li>
+                                <li><a href="#">선물세트</a></li>
+                                <li><a href="#">유산균</a></li>
+                                <li><a href="#">코스매틱</a></li>
+                                <li><a href="#">굿즈</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onClick="winOpen();">공지안내</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="subtitle">
+            <div class="sto_img">
+                <img src="images/storytitle.jpg" alt="story">
+            </div>
+            <div class="sto_img_m">
+                <img src="images/stotitle_m.jpg" alt="story_m">
+            </div>
+            <div class="sto_text">
+                <h1 class="tracking-in-contract">복순도가</h1>
+            </div>
+            <div class="sto_text_m">
+                <h1 class="tracking-in-contract">복순도가</h1>
+            </div>
+        </div>
+        <div id="contents">
+            <div class="inner">
+                <div class="box1">
+                    <h1>시간과 정성을 빚습니다</h1>
+                    <p>어머니의 마음으로 정성스러운 막걸리를 만드는 것, 바로 복순도가의 신념입니다. 항상 좋은 것만<br>주시려는 어머니의 마음을 따라 국산 쌀만을 사용하여 전통 방식 그대로 옛 항아리에 담아 빚었습니다.<br>
+                    살아 숨 쉬는 누룩이 만들어낸 천연 탄산은 긴 발효의 기다림이 주는 선물입니다.</p>
+                    <img src="images/story_1.jpg">
+                </div>
+                <div class="box2">
+                    <h1>가치의 지속, 발효문화</h1>
+                    <p>복순도가는 프리미엄 전통주뿐만 아니라 화장품, 레스토랑, 펍 등 발효문화(醱酵文化)라는 컨텐츠<br>를 지속적으로 개발해오고 있습니다.<br>
+                    발효문화(醱酵文化)라는 공간을 넘어 다양한 분야에 어우러져 새로운 가치를 만들어 갑니다.</p>
+                    <img src="images/story_2.jpg">
+                </div>
+                <div class="box3">
+                    <h1>변화와 순환, 발효건축</h1>
+                    <p>도가의 장남 민규씨는 발효(醱酵)라는 아이디어를 발효주에서 건축의 공간으로 재해석하여 공간이<br>인간에게 유용하게 바뀌는 과정을 발효건축(醱酵建築)이라 정의하였습니다.</p>
+                    <p>쌀과 누룩이 발효과정을 거쳐 새로운 전통주가 되듯 도가 발효라는 컨셉 아래 흙 · 논 · 볏짚 · 누룩<br>등의 한국적 소재들이 건축 재료로서의 일차적 의미를 넘어 다양한 방식으로 어우러져 새로운 퍼포<br>먼스 오브제로 활용되어 계절의 변화를 담아내는 공간을 만들었습니다.</p>
+                    <p>발효건축이 시간과 물질 그리고 순환을 담아내는 하나의 거대한 가마가 되길 원하면서 도가의 내부<br>공간과 외부 공간을 만들었습니다. 계속해서 도가 안의 건축적 재료들과 구조물들이 시간이 지날수록<br>사람들에게 쓸모있게 변해가는 과정을 담아낼 것입니다.</p>
+                    <img src="images/story_3.jpg">
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <p>CONNECT WITH US</p>
+                <ul class="footicon">
+                    <li>
+                        <a href="https://www.instagram.com/boksoondoga/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCB3IfqlwJw_kusTMC_O3TjQ/featured" target="_blank"><img src="images/FB.png" alt="facebook"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <a id="topBtn">Top </a>
+    </div>
+    <script src="scripts.js"></script>
+
+    </div>
+</body>
+</html>

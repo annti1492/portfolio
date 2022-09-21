@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매하기</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+       $(document).ready(function(){
+            mobile_menu();
+        });
+        
+        function mobile_menu(){
+            /* 변수 선언 */
+            var $menu = null;
+            var $left_gnb = null; // 영역 전체
+            var $depth1_wrap = null;
+            var $depth1 = null;
+            var $depth1_btn = null;
+            
+            /* 시작 함수 */
+            function start(){
+                init();
+                init_event();
+            }
+            /* 변수 초기화 함수 */
+            function init(){
+                $menu = $('.mobile_menu');
+                $left_gnb = $('.left_gnbWrap'); // 영역 전체
+                $depth1_wrap = $('.left_gnb>li');
+
+                $on_none1 = $('.left_gnb>li:nth-child(1)');
+                $on_none2 = $('.left_gnb>li:nth-child(2)');
+                $on_none3 = $('.left_gnb>li:nth-child(3)');
+                $on_none5 = $('.left_gnb>li:nth-child(5)');
+
+                $depth1 = $depth1_wrap.children('ul');
+                $depth1_btn = $depth1_wrap.children('a');
+            }
+            /* 이벤트 함수 */
+            function init_event(){
+                
+                /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+                $menu.click(function(event){
+                    event.preventDefault();
+                    $left_gnb.addClass('on');
+                });
+                
+                /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+                $('.close').click(function(event){
+                    event.preventDefault();
+
+                    $left_gnb.removeClass('on');
+                        
+                });
+
+                 /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        // (메뉴1)하위메뉴 없는 1차메뉴 링크
+        $on_none1.click(function () {
+
+        location.replace('sub1.html');
+
+        });
+        // (메뉴2)하위메뉴 없는 1차메뉴 링크
+        $on_none2.click(function () {
+
+        location.replace('sub2.html');
+
+        });
+        // (메뉴3)하위메뉴 없는 1차메뉴 링크
+        $on_none3.click(function () {
+
+        location.replace('sub3.html');
+
+        });
+        // (메뉴5)하위메뉴 없는 1차메뉴 링크
+        $on_none5.click(function () {
+
+        location.replace('sub4.html');
+
+        });
+            }
+            
+            start(); // 시작 호출
+        }
+        
+        </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                <ul class="menu">
+                    <li><a href="sub1.html">복순도가</a></li>
+                    <li><a href="sub2.html">오프라인</a></li>
+                    <li><a href="sub3.html">체험하기</a></li>
+                    <li><a href="sub4.html">구매하기</a>
+                        <ul class="submenu">
+                            <li><a href="sub4.html">전통주</a></li>
+                            <li><a href="#">선물세트</a></li>
+                            <li><a href="#">유산균</a></li>
+                            <li><a href="#">코스매틱</a></li>
+                            <li><a href="#">굿즈</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="images/notice_가격인상공지.jpg" target="_blank">공지안내</a></li>
+                    <!-- 초기화 -->
+                </ul>
+                <!-- 초기화 -->
+                <div class="mobile_menu">
+                    <a href="#"><img src="images/menu.png" alt="mobilemenu"></a>
+                </div>
+                <nav class="left_gnbWrap">
+                    <a href="#" class="close"><img src="images/close.png"></a>
+                    <ul class="left_gnb">
+                        <li>
+                            <a href="sub1.html">복순도가</a>
+                        </li>
+                        <li>
+                            <a href="sub2.html">오프라인</a>
+                        </li>
+                        <li>
+                            <a href="sub3.html">체험하기</a>
+                        </li>
+                        <li>
+                            <a href="sub4.html">구매하기</a>
+                            <ul>
+                                <li><a href="sub4.html">전통주</a></li>
+                                <li><a href="#">선물세트</a></li>
+                                <li><a href="#">유산균</a></li>
+                                <li><a href="#">코스매틱</a></li>
+                                <li><a href="#">굿즈</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onClick="winOpen();">공지안내</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="subtitle">
+            <div class="buy_img">
+                <img src="images/buytitle.jpg" alt="buy">
+            </div>
+            <div class="buy_img_m">
+                <img src="images/buytitle_m.jpg" alt="buy_m">
+            </div>
+            <div class="buy_text">
+                <h1 class="tracking-in-contract">구매하기</h1>
+            </div>
+            <div class="buy_text_m">
+                <h1 class="tracking-in-contract">구매하기</h1>
+            </div>
+        </div>
+        <div id="contents">
+            <h1>전통주</h1>
+            <div class="inner">
+                <ul class="buy_text">
+                    <li>전통주</li>
+                    <li>선물세트</li>
+                    <li>유산균</li>
+                    <li>코스메틱</li>
+                    <li>굿즈</li>
+                    <li>프로모션</li>
+                    <!-- 초기화 -->
+                </ul>
+            </div>
+            <div class="buy_box">
+                <div class="list">
+                    <img src="images/buy1.jpg">
+                    <h2>복순도가 손막걸리</h2>
+                    <p>935ml / 1병</p>
+                    <h1>12,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy2.jpg">
+                    <h2>복순도가 손막걸리</h2>
+                    <p>935ml / 3병</p>
+                    <h1>36,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy3.jpg">
+                    <h2>복순도가 손막걸리</h2>
+                    <p>935ml / 10병</p>
+                    <h1>120,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy4.jpg">
+                    <h2>복순도가 탁주</h2>
+                    <p>935ml / 1병</p>
+                    <h1>24,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy5.jpg">
+                    <h2>복순도가 탁주2병 + 손막걸리 1병</h2>
+                    <p>935ml / 3병</p>
+                    <h1>60,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy6.jpg">
+                    <h2>복순도가 슈퍼드라이</h2>
+                    <p>935ml / 1병</p>
+                    <h1>18,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy7.jpg">
+                    <h2>복순도가 약주</h2>
+                    <p>750ml / 1병</p>
+                    <h1>60,000<span>원</span></h1>
+                </div>
+                <div class="list">
+                    <img src="images/buy8.jpg">
+                    <h2>복순도가 과하주</h2>
+                    <p>750ml / 1병</p>
+                    <h1>90,000<span>원</span></h1>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <p>CONNECT WITH US</p>
+                <ul class="footicon">
+                    <li>
+                        <a href="https://www.instagram.com/boksoondoga/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCB3IfqlwJw_kusTMC_O3TjQ/featured" target="_blank"><img src="images/FB.png" alt="facebook"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <a id="topBtn">Top </a>
+        
+
+    </div>
+    <script src="scripts.js"></script>
+    </div>
+</body>
+</html>

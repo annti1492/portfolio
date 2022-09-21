@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Firmbee.com - Free Project Management for remote teams">
+    <title>welcome to my site</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_dist.css">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar">
+    <!-- Navigation -->
+    <div class="row justify-content-end">
+        <div class="col-12 col-lg-7 col-xl-6 col-xxl-5">
+            <nav id="navbar" class="navbar navbar-expand-lg position-fixed top-0 ms-auto">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i id="mobile-toggler" class="bi bi-list"></i></span>
+                </button>
+                <button id="toggler" class="navbar-toggler navbar-toggler-big" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"><i
+                        class="bi bi-list"></i></button>
+                <div class="collapse navbar-collapse shadow-bg" id="navbarNavAltMarkup">
+                    <div class="navbar-nav p-5">
+                        <a class="nav-item nav-link active text-center mx-3" href="#home">Home</a>
+                        <a class="nav-item nav-link text-center mx-3" href="#About">About</a>
+                        <a class="nav-item nav-link text-center mx-3" href="#portfolio">Portfolio</a>
+                        <a class="nav-item nav-link text-center mx-3" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- First section -->
+    <div id="home" class="frontpage">
+        <div class="wrapper">
+            <header>
+                <div class="row">
+                    <div class="left col-12 col-lg-4">
+                        <div class="col-4 d-none d-lg-block">
+                            <div class="logo">
+                                <div id="container">
+                                    <button class="face-button">
+                                      <span class="face-container">
+                                        <span class="eye left"></span>
+                                        <span class="eye right"></span>
+                                        <span class="mouth"></span>
+                                      </span>
+                                    </button>
+                                  </div>
+                                  
+                               
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="header">
+                                <div class="header-text">
+                                    <h1>
+                                        Design<span class="highlighted">er</span> Portfolio
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row justify-content-lg-start justify-content-center buttons">
+                                <div class="col-7 col-sm-4 col-lg-5">
+                                    <a class="main-button btn-view-portfolio text-center" href="#portfolio">View
+                                        portfolio</a>
+                                </div>
+                                <div class="col-7 col-sm-4 col-lg-5">
+                                    <a class="button text-center" href="#contact">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-12">
+                                <div class="indicators">
+                                    <span class="indicator-main" onclick="currentSlide(1)"></span>
+                                    <span class="indicator-main" onclick="currentSlide(2)"></span>
+                                    <span class="indicator-main" onclick="currentSlide(3)"></span>
+                                    <span class="indicator-main" onclick="currentSlide(4)"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <div class="d-none d-lg-block scroll-item">
+                                    <i class="bi bi-mouse me-2 align-middle"></i><span class="scroll-text">Scroll
+                                        down</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <div class="gallery">
+                            <div class="slide fade">
+                                <img src="img/slides/notebook.jpg" alt="notebook">
+                            </div>
+                            <div class="slide fade">
+                                <img src="img/slides/desk.jpg" alt="desk">
+                            </div>
+                            <div class="slide fade">
+                                <img src="img/slides/man.jpg" alt="man">
+                            </div>
+                            <div class="slide fade">
+                                <img src="img/slides/cookies.jpg" alt="cookies">
+                            </div>
+                            <div class="arrows d-none d-lg-block">
+                                <a class="arrow-right" onclick="plusSlides(1)"><i class="bi bi-arrow-right"></i></a>
+                                <a class="arrow-left" onclick="plusSlides(-1)"><i class="bi bi-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <main>
+        <!-- Second secrtion -->
+        <section id="About">
+            <div id="accordion">
+                <div class="expertize container">
+
+                    <div class="cards row justify-content-between">
+                        <div class="col-3">
+                            <div id="headingOne" class="card" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                <i class="card-icon bi bi-chat-dots"></i>
+                                <p class="subtitles">Hello</p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="headingTwo" class="card collapsed" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="card-icon bi bi-lightbulb"></i>
+                                <p class="subtitles">Idea</p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="headingThree" class="card collapsed" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="card-icon bi bi-palette2"></i>
+                                <p class="subtitles">Designer</p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="headingThree" class="card collapsed" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="card-icon bi bi-diagram-3"></i>
+                                <p class="subtitles">Career</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="collapseOne" class="content row collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordion">
+                        <div class="col-12 col-lg-6">
+                            <h2>About<br><span class="highlighted">me</span></h2>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <p>Ahn Eunjeong
+                                <br>Freelance designer
+                                <br>Busan, Korea, Republic of
+                                <br>2019 CES exhibition
+                                <br>2013 Industrial Design bachelor in Dong-A University
+                                <br>2011 Lotte Department 2nd Web Art Contest Excellence Award
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="collapseTwo" class="content row collapse" aria-labelledby="headingTwo"
+                        data-parent="#accordion">
+                        <div class="col-12 col-lg-6">
+                            <h2>Philosophy <br><span class="highlighted">design</span></h2>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <p>I think design is similar to building a house.<br>
+                                Depending on the homeowner's personality, whether it's an apartment or a detached house,
+                                The interior and yard walls are determined by the architectural style.
+                                The design that was built like that is the world we live in.
+                                <br>The ultimate goal is to make it like Antonio Gaudi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="collapseThree" class="content row collapse" aria-labelledby="headingThree"
+                        data-parent="#accordion">
+                        <div class="col-12 col-lg-6">
+                            <h2>Dobby is <br><span class="highlighted">free</span></h2>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <p>Ahn's work includes
+                                <br>a wide range of fields, reflecting shes abilities in Graphic design, Web-based design, UI design, Motion graphic design, Bx design and many other fields. <br>I became a freelance designer
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="collapseFour" class="content row collapse" aria-labelledby="headingFour"
+                        data-parent="#accordion">
+                        <div class="col-12 col-lg-6">
+                            <h2>Bread<br><span class="highlighted">crumbs</span></h2>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <p>· 2022 Completion of IoT-based responsive web and app design
+                            <br>· FOODEN corp, Design Lead
+                            <br>· BioportKorea corp, Design Lead
+                            <br>· EDENLUX corp, UI Design Lead
+                            <br>· PDM Partners corp, project Designer
+                            <br>· Navis Automotive Systems corp, GUI Designer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Second section -->
+        <section id="portfolio">
+            <!--  id only for scrolling -->
+            <div class="portfolio">
+                <div class="portfolio-header-area">
+                    <div class="container">
+                        <div class="portfolio-header">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-4">
+                                    <h2>Portfolio</h2>
+                                </div>
+                                <div id="filters" class="col-12 col-lg-8">
+                                    <div class="row">
+                                        <div class="col-6 col-sm-3">
+                                            <button class="btn-portfolio active" data-filter="*">All</button>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <button class="btn-portfolio" data-filter=".c1">BX</button>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <button class="btn-portfolio" data-filter=".c2">Package</button>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <button class="btn-portfolio" data-filter=".c3">Web</button>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <button class="btn-portfolio" data-filter=".c4">Graphic</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-body">
+                    <div class="container">
+                        <div class="row grid">
+                            <div class="col-sm-4 all c3">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w1.jpg" alt="Website">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Web</h3>
+                                        <p>Branding/nobrand</p>
+                                        <a class="see-more-button" href="portfolio.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c1">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w2.jpg" alt="aqua">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>BX</h3>
+                                        <p>Branding/Aqua Planet</p>
+                                        <a class="see-more-button" href="portfolio_aqua.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c2">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w3.jpg" alt="Website">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Package</h3>
+                                        <p>Product/Seaweed roll</p>
+                                        <a class="see-more-button" href="portfolio_roll.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c1">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w4.jpg" alt="Brand">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>BX</h3>
+                                        <p>Branding/Skoll</p>
+                                        <a class="see-more-button" href="portfolio_skoll.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c1">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w5.jpg" alt="Website">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>BX</h3>
+                                        <p>Branding/The Farm 471</p>
+                                        <a class="see-more-button" href="portfolio_farm.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c3">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w6.jpg" alt="Brand">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Web</h3>
+                                        <p>UI/UX</p>
+                                        <a class="see-more-button" href="portfolio_bok.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-12 all c4">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w11.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Graphic</h3>
+                                        <p>banner</p>
+                                        <a class="see-more-button" href="portfolio_banner1.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c2">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w7.jpg" alt="Website">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Pacakge</h3>
+                                        <p>Product/Wearable device</p>
+                                        <a class="see-more-button" href="portfolio_eden.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            
+                            <div class="col-sm-4 all c2">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w12.jpg" alt="Characters">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Package</h3>
+                                        <p>Product/wet wipes</p>
+                                        <a class="see-more-button" href="portfolio_wipes.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c4">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w8.jpg" alt="Website">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Graphic</h3>
+                                        <p>content</p>
+                                        <a class="see-more-button" href="portfolio_dokdo.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-8 all c3">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w10.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Web</h3>
+                                        <p>NAVER smartstore</p>
+                                        <a class="see-more-button" href="portfolio_yobong.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c1">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w9.jpg" alt="Website">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>BX</h3>
+                                        <p>Branding/Rosmarinus</p>
+                                        <a class="see-more-button" href="portfolio_rosma.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c4">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w13.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Graphic</h3>
+                                        <p>banner</p>
+                                        <a class="see-more-button" href="portfolio_banner2.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c4">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w14.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Graphic</h3>
+                                        <p>pamphlet</p>
+                                        <a class="see-more-button" href="portfolio_bake.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c2">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w15.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Package</h3>
+                                        <p>Product/Giftset</p>
+                                        <a class="see-more-button" href="portfolio_noni.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c1">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w16.jpg" alt="Brand">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>BX</h3>
+                                        <p>Branding/갈비곳간</p>
+                                        <a class="see-more-button" href="portfolio_galbi.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c4">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w17.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Graphic</h3>
+                                        <p>Fense</p>
+                                        <a class="see-more-button" href="portfolio_fence.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c2">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w18.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Package</h3>
+                                        <p>Product/Kimchi</p>
+                                        <a class="see-more-button" href="portfolio_kimchi.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c4">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w19.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Graphic</h3>
+                                        <p>Character</p>
+                                        <a class="see-more-button" href="portfolio_pig.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c2">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w20.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Package</h3>
+                                        <p>Product/Honey Citron Tea</p>
+                                        <a class="see-more-button" href="portfolio_Tea.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 all c3">
+                                <figure class="hover-img">
+                                    <img class="img-fluid" src="img/portfolio/w21.jpg" alt="Social">
+                                    <div class="overlay"></div>
+                                    <div class="text">
+                                        <h3>Web</h3>
+                                        <p>BOOK Donga</p>
+                                        <a class="see-more-button" href="portfolio_donga.html">See more</a>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <a id="load-more" class="main-button my-5">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fifth section -->
+        <section id="contact">
+            <div class="contact">
+                <hr class="m-0">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="contact-form col-12 col-sm-6 col-md-7">
+                            <h2>Contact</h2>
+                            
+                            <div class="media row my-5">
+                                
+                                <div class="col-12 col-lg-4 mt-5 mt-md-0">
+                                    <p>E-mail</p>
+                                    <a href="mailto:annzzang@gmail.com" class="warning">annzzang@gmail.com</a>
+                                </div>
+                                <div class="col-12 col-lg-4 mt-5 mt-md-0">
+                                    <p>My phone</p>
+                                    <a href="tel:010.9942.1492" class="warning">010.9942.1492</a>
+                                </div>
+                            </div>
+                            
+                            <button class="up" onclick="topFunction()" id="top" title="Go to top">
+                                <i class="bi bi-arrow-up"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+            </div>
+            <div class="footer">
+                <hr class="m-0">
+                <div class="footer_text"> 2022 © Portfolio by Ahn Eunjeong  </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <!-- Isotope gallery -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- or -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Custom JS codes -->
+    <script src="js/gallery.js"></script>
+    <script src="js/slides.js"></script>
+    <script src="js/scrolls.js"></script>
+    <script src="js/validation.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js'></script><script  src="js/script_dist.js"></script>
+    
+
+    <!--
+    This template is licenced under Attribution 3.0 (CC BY 3.0 PL),
+    You are free to: Share and Adapt. You must give appropriate credit, you may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+    -->
+
+</body>
+
+</html>

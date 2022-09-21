@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아출판</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+<!-- Favicons -->
+<link href="img/d.png" rel="icon">
+</head>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="h_left">
+                <li>
+                    <img src="img/yt.png" alt="유튜브">
+                </li>
+                <li>
+                    <img src="img/ins.png" alt="인스타">
+                </li>
+                <li>
+                    <img src="img/fb.png" alt="페북">
+                </li>
+                <li>
+                    <img src="img/blog.png" alt="블로그">
+                </li>
+                <!-- reset -->
+            </ul>
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="로고"></a>
+            </div>
+            <div class="h_right">
+                <div class="btn1">
+                    <p><a href="sub.html">이벤트</a></p>
+                </div>
+                <div class="btn2">
+                    <p>고객센터</p>
+                </div>
+                <div class="menu">
+                    <a href="#"><img src="img/menu.png"></a>
+                  </div>
+                  <nav class="left_gnbWrap">
+                              <a href="#" class="close"><img src="img/close.png"></a>
+                              <ul class="left_gnb">
+                                  <li>
+                                      <a href="#">MY</a>
+                                      <ul>
+                                          <li><a href="#">MY 학습정보</a></li>
+                                          <li><a href="#">MY 이용정보</a></li>
+                                          <li><a href="#">MY 쇼핑정보</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">성장별</a>
+                                      <ul>
+                                        <li><a href="#">유  아</a></li>
+                                        <li><a href="#">초  등</a></li>
+                                        <li><a href="#">중  등</a></li>
+                                        <li><a href="#">고  등</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">교과서</a>
+                                      <ul>
+                                          <li><a href="#">동아출판 교과서</a></li>
+                                          <li><a href="#">전체 교과서</a></li>
+                                          <li><a href="#">교과서 학습자료</a></li>
+                                          <li><a href="#">교과서 판매처</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                    <a href="#">이벤트</a>
+                                    <ul>
+                                        <li><a href="sub.html">Donga Now</a></li>
+                                        <li><a href="#">엄마의 일상</a></li>
+                                    </ul>
+                                  </li>
+                              </ul>
+                          </nav>
+                <!-- reset -->
+            </div>
+            <!-- reset -->
+        </div>
+        <div id="mainimg">
+            <div class="inner">
+                <div class="textbox">
+                    <p>1등이 되고 싶다면 큐브수학!</p>
+                    <h1>초등<span> 수학</span></h1>
+                    <h1> 시작은 <span>누구나</h1>
+                    <h1> 큐브 <span>수학</span></h1>
+                    <div class="btn4">
+                        <p>개인별 코칭 <span>QR제공</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m_textbox">
+            <p>1등이 되고 싶다면 큐브수학!</p>
+            <h1>초등<span> 수학</span><br>시작은 <span>누구나</span><br>큐브 <span>수학</span></h1>
+            <div class="btn4">
+                <p>개인별 코칭 <span>QR제공</span></p>
+            </div>
+        </div>
+        <div id="contents">
+            <div class="con1">
+                <div class="inner">
+                    <h1>꼭 <span>맞춤 교재</span> 제안</h1>
+                    <div class="con1_set">
+                        <div class="con1_1">
+                            <img src="img/book_1.jpg" alt="빠작">
+                        </div>
+                        <div class="con1_2">
+                            <img src="img/book_2.jpg" alt="시계">
+                        </div>
+                        <div class="con1_3">
+                            <img src="img/book_3.jpg" alt="맞춤법">
+                        </div>
+                        <!-- reset -->
+                    </div>
+                    <div class="tw_con1_set">
+                        <div class="tw_con1_1">
+                            <img src="img/tablet_w_con1.jpg" alt="빠작">
+                        </div>
+                        <div class="tw_con1_2">
+                            <img src="img/tablet_w_con2.jpg" alt="시계">
+                        </div>
+                        <div class="tw_con1_3">
+                            <img src="img/tablet_w_con3.jpg" alt="맞춤법">
+                        </div>
+                        <!-- reset -->
+                    </div>
+                    <div class="m_con1_set">
+                        <div class="m_con1_1">
+                            <img src="img/m_book1.jpg" alt="빠작">
+                        </div>
+                        <div class="m_con1_2">
+                            <img src="img/m_book2.jpg" alt="시계">
+                        </div>
+                        <div class="m_con1_3">
+                            <img src="img/m_book3.jpg" alt="맞춤법">
+                        </div>
+                        <!-- reset -->
+                    </div>
+                </div>
+            </div>
+            <div class="con2">
+                <div class="inner">
+                    <h1>무료 <span>스마트</span> 러닝</h1>
+                    <div class="con2_set">
+                        <div class="con2_left">
+                            <div class="con2_1">
+                                <img src="img/smart_1.jpg" alt="놀이한자">
+                            </div>
+                            <div class="con2_2">
+                                <img src="img/smart_2.jpg" alt="독해력">
+                            </div>
+                        </div>
+                        <div class="con2_right">
+                            <div class="con2_3">
+                                <img src="img/smart_3.jpg" alt="구구단송">
+                            </div>
+                            <!-- reset -->
+                        </div>
+                        <div class="m_con2_right">
+                            <div class="m_con2_3">
+                                <img src="img/m_smart3.jpg" alt="구구단송">
+                            </div>
+                            <!-- reset -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="con3">
+                <div class="inner">
+                    <div class="con3_1">
+                        <img src="img/event_1.jpg" alt="서포터즈">
+                    </div>
+                    <div class="m_con3_1">
+                        <img src="img/m_event1.jpg" alt="서포터즈">
+                    </div>
+                    <div class="con3_2">
+                        <img src="img/event_2.jpg" alt="엄마일상">
+                    </div>
+                    <div class="m_con3_2">
+                        <img src="img/m_event2.jpg" alt="서포터즈">
+                    </div>
+                    <!-- reset -->
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <div class="flogo">
+                    <img src="img/flogo.png" alt="푸터로고">
+                </div>
+                <div class="copy">
+                    <p>회사소개 | 인재채용 | 개인정보처리방침 | 이용약관 | 이메일 무단 수집 거부</p>
+                    <p>동아출판㈜ 서울 영등포구 은행로 30    대표  이욱상    사업자번호  101-86-42059  통신판매업신고  2015-서울영등포 0559호    고객센터  1644-0600</p>
+                    <p>ⓒ동아출판㈜ All Right Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

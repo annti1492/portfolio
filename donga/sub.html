@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sub</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.menu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <ul class="h_left">
+                <li>
+                    <img src="img/yt.png" alt="유튜브">
+                </li>
+                <li>
+                    <img src="img/ins.png" alt="인스타">
+                </li>
+                <li>
+                    <img src="img/fb.png" alt="페북">
+                </li>
+                <li>
+                    <img src="img/blog.png" alt="블로그">
+                </li>
+                <!-- reset -->
+            </ul>
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="로고"></a>
+            </div>
+            
+            <div class="h_right">
+                <div class="btn1">
+                    <p><a href="sub.html">이벤트</a></p>
+                </div>
+                <div class="btn2">
+                    <p>고객센터</p>
+                </div>
+                <div class="menu">
+                    <a href="#"><img src="img/menu.png"></a>
+                  </div>
+                  <nav class="left_gnbWrap">
+                              <a href="#" class="close"><img src="img/close.png"></a>
+                              <ul class="left_gnb">
+                                  <li>
+                                      <a href="#">MY</a>
+                                      <ul>
+                                          <li><a href="#">MY 학습정보</a></li>
+                                          <li><a href="#">MY 이용정보</a></li>
+                                          <li><a href="#">MY 쇼핑정보</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">성장별</a>
+                                      <ul>
+                                          <li><a href="#">유  아</a></li>
+                                          <li><a href="#">초  등</a></li>
+                                          <li><a href="#">중  등</a></li>
+                                          <li><a href="#">고  등</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">교과서</a>
+                                      <ul>
+                                          <li><a href="#">동아출판 교과서</a></li>
+                                          <li><a href="#">전체 교과서</a></li>
+                                          <li><a href="#">교과서 학습자료</a></li>
+                                          <li><a href="#">교과서 판매처</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                    <a href="#">이벤트</a>
+                                    <ul>
+                                        <li><a href="sub.html">Donga Now</a></li>
+                                        <li><a href="#">엄마의 일상</a></li>
+                                    </ul>
+                                  </li>
+                              </ul>
+                          </nav>
+                <!-- reset -->
+            </div>
+            <!-- reset -->
+        </div>
+        <div id="menu">
+            <div class="inner">
+                <ul class="sub">
+                    <li>전체</li>
+                    <li>교재소식</li>
+                    <li>스마트러닝</li>
+                    <li>공지사항</li>
+                    <li>이벤트</li>
+                    <li>DongaNow</li>
+                    <!-- reset -->
+                </ul>
+            </div>
+        </div>
+        <div id="sub_contents">
+            <div class="s_con1">
+                <div class="inner">
+                    <h1>동아는 지금</h1>
+                    <p>최신소식을 통해 알맞은 서비스를 이용해보세요.</p>
+                </div>
+            </div>
+            <div class="s_con2">
+                <div class="inner">
+                    <div class="left_text">
+                        <p>DongaNow</p>
+                        <p>2022 2학기 준비, 동아출판과 함께해요!</p>
+                        <!-- reset -->
+                    </div>
+                    <div class="right_text">
+                        <p>2022-05-30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="s_con3"></div>
+            <div class="ta_s_con3"></div>
+            <div class="s_con4">
+                <div class="inner">
+                    <div class="list_btn">
+                        <img src="img/list_btn.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <div class="flogo">
+                    <img src="img/flogo.png" alt="푸터로고">
+                </div>
+                <div class="copy">
+                    <p>회사소개 | 인재채용 | 개인정보처리방침 | 이용약관 | 이메일 무단 수집 거부</p>
+                    <p>동아출판㈜ 서울 영등포구 은행로 30    대표  이욱상    사업자번호  101-86-42059  통신판매업신고  2015-서울영등포 0559호    고객센터  1644-0600</p>
+                    <p>ⓒ동아출판㈜ All Right Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

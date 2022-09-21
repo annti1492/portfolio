@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오프라인</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+       $(document).ready(function(){
+            mobile_menu();
+        });
+        
+        function mobile_menu(){
+            /* 변수 선언 */
+            var $menu = null;
+            var $left_gnb = null; // 영역 전체
+            var $depth1_wrap = null;
+            var $depth1 = null;
+            var $depth1_btn = null;
+            
+            /* 시작 함수 */
+            function start(){
+                init();
+                init_event();
+            }
+            /* 변수 초기화 함수 */
+            function init(){
+                $menu = $('.mobile_menu');
+                $left_gnb = $('.left_gnbWrap'); // 영역 전체
+                $depth1_wrap = $('.left_gnb>li');
+
+                $on_none1 = $('.left_gnb>li:nth-child(1)');
+                $on_none2 = $('.left_gnb>li:nth-child(2)');
+                $on_none3 = $('.left_gnb>li:nth-child(3)');
+                $on_none5 = $('.left_gnb>li:nth-child(5)');
+
+                $depth1 = $depth1_wrap.children('ul');
+                $depth1_btn = $depth1_wrap.children('a');
+            }
+            /* 이벤트 함수 */
+            function init_event(){
+                
+                /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+                $menu.click(function(event){
+                    event.preventDefault();
+                    $left_gnb.addClass('on');
+                });
+                
+                /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+                $('.close').click(function(event){
+                    event.preventDefault();
+
+                    $left_gnb.removeClass('on');
+                        
+                });
+
+                 /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        // (메뉴1)하위메뉴 없는 1차메뉴 링크
+        $on_none1.click(function () {
+
+        location.replace('sub1.html');
+
+        });
+        // (메뉴2)하위메뉴 없는 1차메뉴 링크
+        $on_none2.click(function () {
+
+        location.replace('sub2.html');
+
+        });
+        // (메뉴3)하위메뉴 없는 1차메뉴 링크
+        $on_none3.click(function () {
+
+        location.replace('sub3.html');
+
+        });
+        // (메뉴5)하위메뉴 없는 1차메뉴 링크
+        $on_none5.click(function () {
+
+        location.replace('sub2.html');
+
+        });
+            }
+            
+            start(); // 시작 호출
+        }
+        
+        </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                <ul class="menu">
+                    <li><a href="sub1.html">복순도가</a></li>
+                    <li><a href="sub2.html">오프라인</a></li>
+                    <li><a href="sub3.html">체험하기</a></li>
+                    <li><a href="sub4.html">구매하기</a>
+                        <ul class="submenu">
+                            <li><a href="sub4.html">전통주</a></li>
+                            <li><a href="#">선물세트</a></li>
+                            <li><a href="#">유산균</a></li>
+                            <li><a href="#">코스매틱</a></li>
+                            <li><a href="#">굿즈</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="images/notice_가격인상공지.jpg" target="_blank">공지안내</a></li>
+                    <!-- 초기화 -->
+                </ul>
+                <!-- 초기화 -->
+                <div class="mobile_menu">
+                    <a href="#"><img src="images/menu.png" alt="mobilemenu"></a>
+                </div>
+                <nav class="left_gnbWrap">
+                    <a href="#" class="close"><img src="images/close.png"></a>
+                    <ul class="left_gnb">
+                        <li>
+                            <a href="sub1.html">복순도가</a>
+                        </li>
+                        <li>
+                            <a href="sub2.html">오프라인</a>
+                        </li>
+                        <li>
+                            <a href="sub3.html">체험하기</a>
+                        </li>
+                        <li>
+                            <a href="sub4.html">구매하기</a>
+                            <ul>
+                                <li><a href="sub4.html">전통주</a></li>
+                                <li><a href="#">선물세트</a></li>
+                                <li><a href="#">유산균</a></li>
+                                <li><a href="#">코스매틱</a></li>
+                                <li><a href="#">굿즈</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onClick="winOpen();">공지안내</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="subtitle">
+            <div class="off_img">
+                <img src="images/offlinetitle.jpg" alt="offline">
+            </div>
+            <div class="off_img_m">
+                <img src="images/offlinetitle_m.jpg" alt="offline">
+            </div>
+            <div class="off_text">
+                <h1 class="tracking-in-contract">오프라인</h1>
+            </div>
+            <div class="off_text_m">
+                <h1 class="tracking-in-contract">오프라인</h1>
+            </div>
+        </div>
+        <div id="contents">
+            <div class="inner">
+                <div class="off1">
+                    <img src="images/offline_1.jpg">
+                    <div class="off1_1">
+                        <div class="off1_1_l">
+                            <h1 class="tracking-in-expand">양조장</h1>
+                            <p>울산 울주군에 위치한 양조장은<br>
+                             전통의 바탕 위에 자연 속 발효문화와 다양한<br>
+                             사람들이 모여 새로운 정서를 만들어 갑니다.</p>
+                            <br>
+                            <p>이 곳은 익어가는 술을 품은 도가가 숨쉬며<br>
+                             대지와 함께 하나가 되고 있습니다.</p>
+
+                            <div class="mapbtn">
+                                <p><a href="https://goo.gl/maps/KSzwwr8jMW9nbYHF8" target="_blank">지도보기</a></p>
+                            </div>
+                        </div>
+                        <!-- 초기화 -->
+                        <div class="off1_1_r">
+                            <img src="images/offline_1-1.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="off2">
+                    <img src="images/offline_2.jpg">
+                    <div class="off2_1">
+                        <div class="off2_1_l">
+                            <h1 class="tracking-in-expand">F1963</h1>
+                            <p>부산에 위치한 복순도가 F1963은
+                                ‘발효문화’를<br>처음 실현한 곳입니다.</p>
+                               
+                            <p>도가에서 만든 장을 이용하여 정성으로 담아낸<br>
+                            음식과 전통주를 즐길 수 있습니다.</p>
+                            <br>    
+                            <p>주말에는 체험 클래스 운영합니다. </p>
+                            <div class="mapbtn">
+                                <p><a href="https://goo.gl/maps/rXFbGQaZqZZZrjAj8" target="_blank">지도보기</a></p>
+                            </div>
+                        </div>
+                        <!-- 초기화 -->
+                        <div class="off2_1_r">
+                            <img src="images/offline_2-1.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="off3">
+                    <img src="images/offline_3.jpg">
+                    <div class="off3_1">
+                        <div class="off3_1_l">
+                            <h1 class="tracking-in-expand">노들섬</h1>
+                            <p>서울 한강대교의 중앙에 위치한 노들섬은<br>
+                            2019년 새로운 복합문화시설로 오픈하였습니다.</p>
+                            <br>    
+                            <p>음악과 발효의 조합으로 새로운 컨셉의 라운지<br> 바로, 다양한 전시도 이루어집니다. </p>
+                            <br> 
+                            
+                            <div class="mapbtn">
+                                <p><a href="https://g.page/BOKSOONDOGA?share" target="_blank">지도보기</a></p>
+                            </div>
+                        </div>
+                        <!-- 초기화 -->
+                        <div class="off3_1_r">
+                            <img src="images/offline_3-1.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner">
+                <p>CONNECT WITH US</p>
+                <ul class="footicon">
+                    <li>
+                        <a href="https://www.instagram.com/boksoondoga/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCB3IfqlwJw_kusTMC_O3TjQ/featured" target="_blank"><img src="images/FB.png" alt="facebook"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <a id="topBtn">Top </a>
+        
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
