@@ -702,7 +702,7 @@ hr {
   
 }
 
-.col-sm-3{width: 20%;}
+.col-sm-3{width: 18%;}
 
 
 
@@ -749,8 +749,8 @@ hr {
     font-size: 4.5rem;
   }
   p {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1.1rem;
+    line-height: 2.2rem;
   }
   .expertize {
     margin-bottom: 100px;
@@ -833,7 +833,7 @@ hr {
   }
   .portfolio .portfolio-header-area .portfolio-header p {
     font-size: 15px;
-    line-height: 10px;
+    line-height: 20px;
   }
   .clients .clients-area img {
     width: 70%;
@@ -883,7 +883,7 @@ hr {
     border-top: 35px solid #ffca1f;
   }
   .portfolio .portfolio-header-area .portfolio-header .btn-portfolio {
-    width: 95px;
+    width: 70px;
     font-size: 20px;
   }
   .portfolio .portfolio-body .hover-img .see-more-button {
@@ -954,7 +954,7 @@ hr {
     height: 550px;
   }
   .portfolio .portfolio-header-area .portfolio-header .btn-portfolio {
-    font-size: 20px;
+    font-size: 16px;
   }
   .portfolio .portfolio-header-area .portfolio-header .title {
     font-size: 23px;
@@ -962,7 +962,7 @@ hr {
   }
   .portfolio .portfolio-header-area .portfolio-header p {
     font-size: 15px;
-    line-height: 10px;
+    line-height: 20px;
   }
   .clients .clients-area img {
     width: 50%;
