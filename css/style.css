@@ -940,7 +940,7 @@ hr {
   }
   .expertize .cards .card .card-icon {
     font-size: 26px;
-    color: #ff8f68;
+    color: #ffca1f;
   }
   .expertize .cards .card p {
     display: none;
@@ -948,7 +948,7 @@ hr {
   .expertize .cards .card[aria-expanded="true"]:after {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #ff8f68;
+    border-top: 20px solid #ffca1f;
   }
   .portfolio .portfolio-header-area {
     height: 550px;
