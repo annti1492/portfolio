@@ -17,7 +17,7 @@ function scrollFunction() {
   //If on desktop
   if(!mediaQuery.matches) {
     //if scrolled 
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
       //button toggler menu
         console.log(mediaQuery.matches)
         nav.classList.add("nav-scrolled");
